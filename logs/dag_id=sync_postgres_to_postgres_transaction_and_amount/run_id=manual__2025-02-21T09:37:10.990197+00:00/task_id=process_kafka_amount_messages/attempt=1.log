@@ -1,0 +1,120 @@
+[2025-02-21T09:37:12.306+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sync_postgres_to_postgres_transaction_and_amount.process_kafka_amount_messages manual__2025-02-21T09:37:10.990197+00:00 [queued]>
+[2025-02-21T09:37:12.320+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sync_postgres_to_postgres_transaction_and_amount.process_kafka_amount_messages manual__2025-02-21T09:37:10.990197+00:00 [queued]>
+[2025-02-21T09:37:12.321+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-02-21T09:37:12.339+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): process_kafka_amount_messages> on 2025-02-21 09:37:10.990197+00:00
+[2025-02-21T09:37:12.348+0000] {standard_task_runner.py:57} INFO - Started process 1661 to run task
+[2025-02-21T09:37:12.351+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'sync_postgres_to_postgres_transaction_and_amount', 'process_kafka_amount_messages', 'manual__2025-02-21T09:37:10.990197+00:00', '--job-id', '47', '--raw', '--subdir', 'DAGS_FOLDER/sync_postgres_dag.py', '--cfg-path', '/tmp/tmpr9yvoqoo']
+[2025-02-21T09:37:12.353+0000] {standard_task_runner.py:85} INFO - Job 47: Subtask process_kafka_amount_messages
+[2025-02-21T09:37:12.420+0000] {task_command.py:416} INFO - Running <TaskInstance: sync_postgres_to_postgres_transaction_and_amount.process_kafka_amount_messages manual__2025-02-21T09:37:10.990197+00:00 [running]> on host c0c1f1afe7d6
+[2025-02-21T09:37:12.534+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='sync_postgres_to_postgres_transaction_and_amount' AIRFLOW_CTX_TASK_ID='process_kafka_amount_messages' AIRFLOW_CTX_EXECUTION_DATE='2025-02-21T09:37:10.990197+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-21T09:37:10.990197+00:00'
+[2025-02-21T09:37:12.535+0000] {sync_postgres_dag.py:131} INFO - Starting Kafka consumer for amount messages...
+[2025-02-21T09:37:12.539+0000] {sync_postgres_dag.py:143} INFO - Connected to Kafka broker at 172.17.0.1:9092
+[2025-02-21T09:37:12.545+0000] {sync_postgres_dag.py:148} INFO - Connected to PostgreSQL database at 172.17.0.1:5433
+[2025-02-21T09:37:12.561+0000] {sync_postgres_dag.py:162} INFO - Amount table created/verified
+[2025-02-21T09:37:12.672+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 0f6f66bc-ba63-4e38-8f0a-c779d05dd747
+[2025-02-21T09:37:12.675+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: cfde8e4d-4512-42ff-8d36-008eadc11744
+[2025-02-21T09:37:12.679+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: cdfe5e39-6499-4df0-a7b7-877c75ee08db
+[2025-02-21T09:37:12.682+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: e0063efb-aeb0-4faa-9d13-5591fb6925aa
+[2025-02-21T09:37:12.685+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 29469b84-7881-4331-9716-429502072ca7
+[2025-02-21T09:37:12.689+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: b744e9d2-f647-4f78-a8cb-618c93329e44
+[2025-02-21T09:37:12.693+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 3ff0d620-6aae-4e17-b244-39be255c08d9
+[2025-02-21T09:37:12.697+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 14ffcbb1-e834-4ea4-a131-a8aad80c6a6e
+[2025-02-21T09:37:12.701+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 9dd2ad59-03f3-4af7-bf72-f4b9b6929ecc
+[2025-02-21T09:37:12.705+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 488d9531-3123-4419-aa20-dfbcdf66291e
+[2025-02-21T09:37:12.708+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 7000133e-7b75-4a43-a6dd-a2f51f0240d1
+[2025-02-21T09:37:12.711+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: a80cf937-6587-45aa-a3b0-aeb7fa2c94ab
+[2025-02-21T09:37:12.714+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: f5a52811-c405-421c-a533-181b5a743672
+[2025-02-21T09:37:12.717+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 0d287e5e-e096-4da9-b973-a80ac78b4ecd
+[2025-02-21T09:37:12.720+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 4c4e02e3-f166-4e9c-81ea-fc1535bbf920
+[2025-02-21T09:37:12.723+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 3a098ee5-6ef1-430b-a198-92f47b7f227b
+[2025-02-21T09:37:12.727+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 6c8b4300-6570-450b-b85c-b9eef01a5daf
+[2025-02-21T09:37:12.731+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: d6ecbe7f-1010-4cae-a446-8fb73ce74146
+[2025-02-21T09:37:12.735+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 3f94faeb-99a8-4e59-9e39-084cec31c917
+[2025-02-21T09:37:12.739+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 9542e85b-14c0-41f9-af44-51f7060acd2b
+[2025-02-21T09:37:12.743+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 14e32af4-10de-4e2d-88a8-87abe3e226c3
+[2025-02-21T09:37:12.747+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: f2ed4e04-bc21-4d30-8ff4-612a9057dd77
+[2025-02-21T09:37:12.751+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 784e8cb9-ed16-45b0-b193-07309cdb4fb7
+[2025-02-21T09:37:12.754+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: a38845ab-0cb2-4efc-ba6c-e87dd14bd553
+[2025-02-21T09:37:12.757+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 1b5de7c3-7f2b-42cb-99c7-bf89e1167b3e
+[2025-02-21T09:37:12.760+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 73b0b2a4-b5b7-4b41-8201-132e75dd2440
+[2025-02-21T09:37:12.764+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: e2a52299-b35d-491e-90bd-287f78119b68
+[2025-02-21T09:37:12.767+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 8cb3efa5-7e50-48af-b3d0-5d4b19e43af9
+[2025-02-21T09:37:12.769+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: ef814672-f9fb-41ef-9f84-9e0b7c55969d
+[2025-02-21T09:37:12.771+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 5b9200b3-42ab-4704-8ec2-d5f96c5df6b1
+[2025-02-21T09:37:12.773+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: b2b6bf74-f339-4f8b-a6d3-4a9b4534ea64
+[2025-02-21T09:37:12.776+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 20646349-26d4-416f-a2c4-12ac6a44f67c
+[2025-02-21T09:37:12.780+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: f3bb9a83-0262-41c6-8f94-fa45c884edb7
+[2025-02-21T09:37:12.783+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: c6dbbc28-60aa-4332-b552-625efdd2e4a4
+[2025-02-21T09:37:12.786+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: ac01d166-6a46-4973-9de4-30e5e386c85c
+[2025-02-21T09:37:12.789+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: e817e06b-962d-473e-bd59-e18022a3110d
+[2025-02-21T09:37:12.792+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: a70da9e2-526c-4504-a2bf-c15adab5d04d
+[2025-02-21T09:37:12.795+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 827d1145-a62f-4ac8-b20e-fcc7b8dd6fd6
+[2025-02-21T09:37:12.799+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 56a72c6e-798c-4ff5-9925-ed7ffdb895c8
+[2025-02-21T09:37:12.801+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 469185ae-6cdc-4e4b-926b-7273b83183df
+[2025-02-21T09:37:12.804+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 2db854b3-63a0-4203-beb3-f559c8e6ce44
+[2025-02-21T09:37:12.807+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 1d25a8a5-7a42-4a21-a5a9-6a336f160365
+[2025-02-21T09:37:12.809+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: be7baa98-be54-4397-9e42-2f19fd4616a0
+[2025-02-21T09:37:12.812+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: b5fbaef9-e734-458b-b1d2-39bb8c831a6d
+[2025-02-21T09:37:12.814+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: dd9b97b8-4b13-46ed-b084-7146e5a5fed8
+[2025-02-21T09:37:12.817+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 39d01ede-b20d-450a-a888-de43a15f04ae
+[2025-02-21T09:37:12.820+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: ffc4a07a-4197-4ab3-8ceb-a67ff4a377df
+[2025-02-21T09:37:12.823+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 5ed90d3e-c026-46f9-b9bc-b9b0c4362953
+[2025-02-21T09:37:12.826+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 062bb286-c342-49e0-8280-477f4eff73da
+[2025-02-21T09:37:12.828+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 08f730af-a782-4f05-8585-22306c5a05f7
+[2025-02-21T09:37:12.831+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 7d86627b-e69d-4d6b-87de-8ef9a4a76484
+[2025-02-21T09:37:12.834+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: e2d8f853-ed45-44cd-a3a4-e16706f3660f
+[2025-02-21T09:37:12.837+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: c8295484-e484-4fcc-98c7-6d329e50afc6
+[2025-02-21T09:37:12.840+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 239849e1-5cbf-4957-9b47-6c53de3691b7
+[2025-02-21T09:37:12.843+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 7739cdae-6077-40e1-8a21-55494a089d0e
+[2025-02-21T09:37:12.847+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: d64db3a9-adee-4de7-b8c8-a5955861a72a
+[2025-02-21T09:37:12.850+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: e612bb27-d5c7-4b3d-9cb3-8380a728aad1
+[2025-02-21T09:37:12.854+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 07e96abf-37d0-4090-aa00-31ae129a6ea7
+[2025-02-21T09:37:12.857+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 6ed77458-4990-4696-923c-2ce31f6c7919
+[2025-02-21T09:37:12.860+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: adb44e17-1963-4d64-857f-0d243efc6b7c
+[2025-02-21T09:37:12.863+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 4db520b1-15d2-43c3-96b5-e19b6488b46a
+[2025-02-21T09:37:12.865+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: eb313c59-f129-4678-afa3-96a66ee6fcca
+[2025-02-21T09:37:12.869+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 4ba57f3c-08ae-4f85-93cf-eaf274ba02d1
+[2025-02-21T09:37:12.872+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: fddf21be-95ce-4d56-82d7-d61adf0c9691
+[2025-02-21T09:37:12.875+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 493bab45-0f9e-4497-b3e0-376f3679172e
+[2025-02-21T09:37:12.878+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 10a4761d-1571-4ec2-a840-630bd9ceb517
+[2025-02-21T09:37:12.881+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 42208e30-d9db-4603-929b-ac3c1e81c55f
+[2025-02-21T09:37:12.884+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 90f0c2d0-317f-4c1f-9c72-af90ccb51b0a
+[2025-02-21T09:37:12.887+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 9c1180d1-d9de-4979-ba08-28da6245a66f
+[2025-02-21T09:37:12.890+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: cde13fb3-f3bb-4493-9680-69513c531683
+[2025-02-21T09:37:12.894+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: c56ca1cc-67d8-48ed-b14d-6d2e226bd6d5
+[2025-02-21T09:37:12.898+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 7c705598-a1ed-4e8e-a621-1c5e808b9da7
+[2025-02-21T09:37:12.901+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 5b59db25-dfc4-475d-a91f-4f106fadd2c6
+[2025-02-21T09:37:12.905+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 32d7fca4-d27a-486a-a2d0-14a5993c259f
+[2025-02-21T09:37:12.907+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 3bf15fcf-785e-4179-b595-9cfb40617bb3
+[2025-02-21T09:37:12.910+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 8f2b2f14-690a-4299-ab02-15115cda6f12
+[2025-02-21T09:37:12.913+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 4bd5ca6d-82c9-4785-a6d0-c33ae7ca1d45
+[2025-02-21T09:37:12.916+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: fe360b02-1b5a-4fad-adda-5980b91feb11
+[2025-02-21T09:37:12.919+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 6d272aa8-cbed-41f3-a56e-3587259e2836
+[2025-02-21T09:37:12.922+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 33175c21-e39f-46b5-965a-de71f4f8e2d5
+[2025-02-21T09:37:12.925+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 158c78b3-ecfc-471e-987f-c3ec5254ee54
+[2025-02-21T09:37:12.928+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: d8709170-d2c1-479d-ad2a-aa409de855f0
+[2025-02-21T09:37:12.931+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 32b480df-f963-4d2f-9b3c-934312580959
+[2025-02-21T09:37:12.935+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 337975da-27b3-4cfe-aa3d-ca568acc4803
+[2025-02-21T09:37:12.938+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: df447c7c-82f5-49b2-87e1-fcede2421ae1
+[2025-02-21T09:37:12.941+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 3b636f50-c16c-4416-8d4e-6f469cbee064
+[2025-02-21T09:37:12.944+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: ac76f214-5a91-40ba-8a51-4bf5f4177f28
+[2025-02-21T09:37:12.947+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: fc0fd123-2b90-4c95-8d52-5028ef1e0e2c
+[2025-02-21T09:37:12.950+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 47d9cf57-4ca1-4f76-8ada-ce2ec7cc8d8d
+[2025-02-21T09:37:12.953+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: bb89eb39-7ea7-459f-89ae-a130e236929a
+[2025-02-21T09:37:12.956+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 2c8f3b1d-ad98-4a40-b780-845bb6fc6384
+[2025-02-21T09:37:12.960+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 0a5ba1d2-6e98-4da2-9c25-873c3123f41f
+[2025-02-21T09:37:12.964+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: cf41f06e-d6bf-4003-bd66-de2bc4d168e3
+[2025-02-21T09:37:12.967+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 205248c6-50da-4838-b3f4-5e42fa5342f0
+[2025-02-21T09:37:12.971+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 0caea3b8-0f53-4cda-9cf7-1f5c29df8bc1
+[2025-02-21T09:37:12.974+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 89a975fd-0dab-4ebd-9e5e-2e88e20887d4
+[2025-02-21T09:37:12.977+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: e671382a-6d94-437e-aee4-80058a510adf
+[2025-02-21T09:37:12.980+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: f011d032-bc03-4deb-a4d9-9861ec9a856a
+[2025-02-21T09:37:12.983+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 9114d60f-d0ca-486f-8b5a-91910d2de5b2
+[2025-02-21T09:37:12.986+0000] {sync_postgres_dag.py:209} INFO - Successfully processed amount for ID: 4dd957bc-99e1-42dd-b687-c8d6284de172
+[2025-02-21T09:37:52.873+0000] {local_task_job_runner.py:294} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2025-02-21T09:37:52.875+0000] {process_utils.py:131} INFO - Sending 15 to group 1661. PIDs of all processes in the group: [1661]
+[2025-02-21T09:37:52.876+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 1661
+[2025-02-21T09:37:52.995+0000] {taskinstance.py:1632} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-02-21T09:37:52.995+0000] {sync_postgres_dag.py:216} ERROR - Fatal error in amount consumer: Task received SIGTERM signal
+[2025-02-21T09:37:52.996+0000] {sync_postgres_dag.py:220} INFO - Closing connections for amount consumer...
+[2025-02-21T09:37:53.049+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=1661, status='terminated', exitcode=0, started='09:37:11') (1661) terminated with exit code 0

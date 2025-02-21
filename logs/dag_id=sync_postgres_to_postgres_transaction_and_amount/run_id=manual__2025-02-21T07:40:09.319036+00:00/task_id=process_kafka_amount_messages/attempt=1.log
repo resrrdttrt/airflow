@@ -1,0 +1,39 @@
+[2025-02-21T07:40:09.913+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sync_postgres_to_postgres_transaction_and_amount.process_kafka_amount_messages manual__2025-02-21T07:40:09.319036+00:00 [queued]>
+[2025-02-21T07:40:09.927+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sync_postgres_to_postgres_transaction_and_amount.process_kafka_amount_messages manual__2025-02-21T07:40:09.319036+00:00 [queued]>
+[2025-02-21T07:40:09.927+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-02-21T07:40:09.946+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): process_kafka_amount_messages> on 2025-02-21 07:40:09.319036+00:00
+[2025-02-21T07:40:09.957+0000] {standard_task_runner.py:57} INFO - Started process 380 to run task
+[2025-02-21T07:40:09.961+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'sync_postgres_to_postgres_transaction_and_amount', 'process_kafka_amount_messages', 'manual__2025-02-21T07:40:09.319036+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/sync_postgres_dag.py', '--cfg-path', '/tmp/tmpd29uniez']
+[2025-02-21T07:40:09.962+0000] {standard_task_runner.py:85} INFO - Job 12: Subtask process_kafka_amount_messages
+[2025-02-21T07:40:10.026+0000] {task_command.py:416} INFO - Running <TaskInstance: sync_postgres_to_postgres_transaction_and_amount.process_kafka_amount_messages manual__2025-02-21T07:40:09.319036+00:00 [running]> on host e5982255e08e
+[2025-02-21T07:40:10.124+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='sync_postgres_to_postgres_transaction_and_amount' AIRFLOW_CTX_TASK_ID='process_kafka_amount_messages' AIRFLOW_CTX_EXECUTION_DATE='2025-02-21T07:40:09.319036+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-21T07:40:09.319036+00:00'
+[2025-02-21T07:40:10.126+0000] {sync_postgres_dag.py:120} INFO - Starting Kafka consumer for amount messages...
+[2025-02-21T07:40:10.128+0000] {conn.py:380} INFO - <BrokerConnection node_id=bootstrap-0 host=172.17.0.1:9092 <connecting> [IPv4 ('172.17.0.1', 9092)]>: connecting to 172.17.0.1:9092 [('172.17.0.1', 9092) IPv4]
+[2025-02-21T07:40:10.129+0000] {conn.py:1206} INFO - Probing node bootstrap-0 broker version
+[2025-02-21T07:40:10.129+0000] {conn.py:410} INFO - <BrokerConnection node_id=bootstrap-0 host=172.17.0.1:9092 <connecting> [IPv4 ('172.17.0.1', 9092)]>: Connection complete.
+[2025-02-21T07:40:10.236+0000] {conn.py:1268} INFO - Broker version identified as 2.6.0
+[2025-02-21T07:40:10.236+0000] {conn.py:1269} INFO - Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+[2025-02-21T07:40:10.237+0000] {subscription_state.py:171} INFO - Updating subscribed topics to: ('from_mysql_amount',)
+[2025-02-21T07:40:10.238+0000] {sync_postgres_dag.py:131} INFO - Connected to Kafka broker at 172.17.0.1:9092
+[2025-02-21T07:40:10.243+0000] {sync_postgres_dag.py:136} INFO - Connected to PostgreSQL database at 172.17.0.1:5433
+[2025-02-21T07:40:10.291+0000] {sync_postgres_dag.py:150} INFO - Amount table created/verified
+[2025-02-21T07:40:10.296+0000] {cluster.py:371} INFO - Group coordinator for amount_consumer_group is ('coordinator-1', '172.25.0.5', 9092, None)
+[2025-02-21T07:40:10.297+0000] {base.py:693} INFO - Discovered coordinator coordinator-1 for group amount_consumer_group
+[2025-02-21T07:40:10.297+0000] {base.py:741} INFO - Starting new heartbeat thread
+[2025-02-21T07:40:10.298+0000] {consumer.py:348} INFO - Revoking previously assigned partitions () for group amount_consumer_group
+[2025-02-21T07:40:10.298+0000] {conn.py:380} INFO - <BrokerConnection node_id=coordinator-1 host=172.25.0.5:9092 <connecting> [IPv4 ('172.25.0.5', 9092)]>: connecting to 172.25.0.5:9092 [('172.25.0.5', 9092) IPv4]
+[2025-02-21T07:42:26.580+0000] {conn.py:418} ERROR - Connect attempt to <BrokerConnection node_id=coordinator-1 host=172.25.0.5:9092 <connecting> [IPv4 ('172.25.0.5', 9092)]> returned error 110. Disconnecting.
+[2025-02-21T07:42:26.581+0000] {conn.py:919} ERROR - <BrokerConnection node_id=coordinator-1 host=172.25.0.5:9092 <connecting> [IPv4 ('172.25.0.5', 9092)]>: Closing connection. KafkaConnectionError: 110 ETIMEDOUT
+[2025-02-21T07:42:26.581+0000] {client_async.py:331} WARNING - Node coordinator-1 connection failed -- refreshing metadata
+[2025-02-21T07:42:26.682+0000] {base.py:715} WARNING - Marking the coordinator dead (node coordinator-1) for group amount_consumer_group: Node Disconnected.
+[2025-02-21T07:42:26.683+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=172.25.0.5:9092 <connecting> [IPv4 ('172.25.0.5', 9092)]>: connecting to 172.25.0.5:9092 [('172.25.0.5', 9092) IPv4]
+[2025-02-21T07:42:41.812+0000] {local_task_job_runner.py:294} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2025-02-21T07:42:41.814+0000] {process_utils.py:131} INFO - Sending 15 to group 380. PIDs of all processes in the group: [380]
+[2025-02-21T07:42:41.815+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 380
+[2025-02-21T07:42:41.815+0000] {taskinstance.py:1632} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-02-21T07:42:41.816+0000] {sync_postgres_dag.py:195} ERROR - Fatal error in amount consumer: Task received SIGTERM signal
+[2025-02-21T07:42:41.816+0000] {sync_postgres_dag.py:199} INFO - Closing connections for amount consumer...
+[2025-02-21T07:42:41.816+0000] {base.py:748} INFO - Stopping heartbeat thread
+[2025-02-21T07:42:41.817+0000] {conn.py:919} INFO - <BrokerConnection node_id=bootstrap-0 host=172.17.0.1:9092 <connected> [IPv4 ('172.17.0.1', 9092)]>: Closing connection. 
+[2025-02-21T07:42:41.817+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=172.25.0.5:9092 <connecting> [IPv4 ('172.25.0.5', 9092)]>: Closing connection. 
+[2025-02-21T07:42:41.868+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=380, status='terminated', exitcode=0, started='07:40:09') (380) terminated with exit code 0

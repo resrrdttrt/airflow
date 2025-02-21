@@ -1,0 +1,120 @@
+[2025-02-21T09:32:56.128+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sync_postgres_to_postgres_transaction_and_amount.process_kafka_amount_messages manual__2025-02-21T09:32:55.509433+00:00 [queued]>
+[2025-02-21T09:32:56.142+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sync_postgres_to_postgres_transaction_and_amount.process_kafka_amount_messages manual__2025-02-21T09:32:55.509433+00:00 [queued]>
+[2025-02-21T09:32:56.143+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-02-21T09:32:56.160+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): process_kafka_amount_messages> on 2025-02-21 09:32:55.509433+00:00
+[2025-02-21T09:32:56.170+0000] {standard_task_runner.py:57} INFO - Started process 1554 to run task
+[2025-02-21T09:32:56.174+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'sync_postgres_to_postgres_transaction_and_amount', 'process_kafka_amount_messages', 'manual__2025-02-21T09:32:55.509433+00:00', '--job-id', '40', '--raw', '--subdir', 'DAGS_FOLDER/sync_postgres_dag.py', '--cfg-path', '/tmp/tmpzr6560rh']
+[2025-02-21T09:32:56.175+0000] {standard_task_runner.py:85} INFO - Job 40: Subtask process_kafka_amount_messages
+[2025-02-21T09:32:56.248+0000] {task_command.py:416} INFO - Running <TaskInstance: sync_postgres_to_postgres_transaction_and_amount.process_kafka_amount_messages manual__2025-02-21T09:32:55.509433+00:00 [running]> on host c0c1f1afe7d6
+[2025-02-21T09:32:56.358+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='sync_postgres_to_postgres_transaction_and_amount' AIRFLOW_CTX_TASK_ID='process_kafka_amount_messages' AIRFLOW_CTX_EXECUTION_DATE='2025-02-21T09:32:55.509433+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-21T09:32:55.509433+00:00'
+[2025-02-21T09:32:56.359+0000] {sync_postgres_dag.py:131} INFO - Starting Kafka consumer for amount messages...
+[2025-02-21T09:32:56.364+0000] {sync_postgres_dag.py:143} INFO - Connected to Kafka broker at 172.17.0.1:9092
+[2025-02-21T09:32:56.370+0000] {sync_postgres_dag.py:148} INFO - Connected to PostgreSQL database at 172.17.0.1:5433
+[2025-02-21T09:32:56.372+0000] {sync_postgres_dag.py:162} INFO - Amount table created/verified
+[2025-02-21T09:32:56.483+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.484+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.484+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.484+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.485+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.485+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.485+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.485+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.486+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.486+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.486+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.486+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.486+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.487+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.487+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.487+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.487+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.487+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.488+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.488+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.488+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.488+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.488+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.488+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.489+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.489+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.489+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.489+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.489+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.490+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.490+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.490+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.490+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.490+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.491+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.491+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.491+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.491+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.491+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.492+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.492+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.492+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.492+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.492+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.493+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.493+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.494+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.494+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.494+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.495+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.495+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.495+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.495+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.495+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.496+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.496+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.496+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.496+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.496+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.497+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.497+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.497+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.497+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.497+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.498+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.498+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.498+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.498+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.498+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.498+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.499+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.499+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.499+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.499+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.499+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.500+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.500+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.500+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.500+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.500+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.501+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.501+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.501+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.502+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.503+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.503+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.503+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.503+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.503+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.503+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.504+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.504+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.504+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.504+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.504+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.504+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.505+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.505+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.505+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:32:56.505+0000] {sync_postgres_dag.py:211} ERROR - Error processing amount message: year 57111 is out of range
+[2025-02-21T09:33:26.557+0000] {local_task_job_runner.py:294} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2025-02-21T09:33:26.559+0000] {process_utils.py:131} INFO - Sending 15 to group 1554. PIDs of all processes in the group: [1554]
+[2025-02-21T09:33:26.559+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 1554
+[2025-02-21T09:33:27.512+0000] {taskinstance.py:1632} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-02-21T09:33:27.512+0000] {sync_postgres_dag.py:215} ERROR - Fatal error in amount consumer: Task received SIGTERM signal
+[2025-02-21T09:33:27.513+0000] {sync_postgres_dag.py:219} INFO - Closing connections for amount consumer...
+[2025-02-21T09:33:27.577+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=1554, status='terminated', exitcode=0, started='09:32:55') (1554) terminated with exit code 0

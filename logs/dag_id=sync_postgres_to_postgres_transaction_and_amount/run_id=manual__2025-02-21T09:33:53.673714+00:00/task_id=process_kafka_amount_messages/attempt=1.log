@@ -1,0 +1,120 @@
+[2025-02-21T09:33:54.297+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sync_postgres_to_postgres_transaction_and_amount.process_kafka_amount_messages manual__2025-02-21T09:33:53.673714+00:00 [queued]>
+[2025-02-21T09:33:54.311+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sync_postgres_to_postgres_transaction_and_amount.process_kafka_amount_messages manual__2025-02-21T09:33:53.673714+00:00 [queued]>
+[2025-02-21T09:33:54.312+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-02-21T09:33:54.328+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): process_kafka_amount_messages> on 2025-02-21 09:33:53.673714+00:00
+[2025-02-21T09:33:54.336+0000] {standard_task_runner.py:57} INFO - Started process 1586 to run task
+[2025-02-21T09:33:54.340+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'sync_postgres_to_postgres_transaction_and_amount', 'process_kafka_amount_messages', 'manual__2025-02-21T09:33:53.673714+00:00', '--job-id', '43', '--raw', '--subdir', 'DAGS_FOLDER/sync_postgres_dag.py', '--cfg-path', '/tmp/tmpcc7m7g3z']
+[2025-02-21T09:33:54.341+0000] {standard_task_runner.py:85} INFO - Job 43: Subtask process_kafka_amount_messages
+[2025-02-21T09:33:54.410+0000] {task_command.py:416} INFO - Running <TaskInstance: sync_postgres_to_postgres_transaction_and_amount.process_kafka_amount_messages manual__2025-02-21T09:33:53.673714+00:00 [running]> on host c0c1f1afe7d6
+[2025-02-21T09:33:54.514+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='sync_postgres_to_postgres_transaction_and_amount' AIRFLOW_CTX_TASK_ID='process_kafka_amount_messages' AIRFLOW_CTX_EXECUTION_DATE='2025-02-21T09:33:53.673714+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-21T09:33:53.673714+00:00'
+[2025-02-21T09:33:54.515+0000] {sync_postgres_dag.py:131} INFO - Starting Kafka consumer for amount messages...
+[2025-02-21T09:33:54.518+0000] {sync_postgres_dag.py:143} INFO - Connected to Kafka broker at 172.17.0.1:9092
+[2025-02-21T09:33:54.523+0000] {sync_postgres_dag.py:148} INFO - Connected to PostgreSQL database at 172.17.0.1:5433
+[2025-02-21T09:33:54.525+0000] {sync_postgres_dag.py:162} INFO - Amount table created/verified
+[2025-02-21T09:33:54.640+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 1
+[2025-02-21T09:33:54.643+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 2
+[2025-02-21T09:33:54.646+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 3
+[2025-02-21T09:33:54.649+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 4
+[2025-02-21T09:33:54.652+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 5
+[2025-02-21T09:33:54.655+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 6
+[2025-02-21T09:33:54.658+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 7
+[2025-02-21T09:33:54.661+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 8
+[2025-02-21T09:33:54.664+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 9
+[2025-02-21T09:33:54.666+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 10
+[2025-02-21T09:33:54.670+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 11
+[2025-02-21T09:33:54.673+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 12
+[2025-02-21T09:33:54.677+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 13
+[2025-02-21T09:33:54.679+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 14
+[2025-02-21T09:33:54.682+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 15
+[2025-02-21T09:33:54.685+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 16
+[2025-02-21T09:33:54.688+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 17
+[2025-02-21T09:33:54.691+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 18
+[2025-02-21T09:33:54.693+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 19
+[2025-02-21T09:33:54.695+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 20
+[2025-02-21T09:33:54.697+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 21
+[2025-02-21T09:33:54.700+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 22
+[2025-02-21T09:33:54.703+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 23
+[2025-02-21T09:33:54.706+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 24
+[2025-02-21T09:33:54.709+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 25
+[2025-02-21T09:33:54.712+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 26
+[2025-02-21T09:33:54.714+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 27
+[2025-02-21T09:33:54.717+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 28
+[2025-02-21T09:33:54.721+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 29
+[2025-02-21T09:33:54.724+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 30
+[2025-02-21T09:33:54.727+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 31
+[2025-02-21T09:33:54.730+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 32
+[2025-02-21T09:33:54.734+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 33
+[2025-02-21T09:33:54.738+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 34
+[2025-02-21T09:33:54.741+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 35
+[2025-02-21T09:33:54.748+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 36
+[2025-02-21T09:33:54.752+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 37
+[2025-02-21T09:33:54.756+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 38
+[2025-02-21T09:33:54.760+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 39
+[2025-02-21T09:33:54.763+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 40
+[2025-02-21T09:33:54.767+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 41
+[2025-02-21T09:33:54.771+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 42
+[2025-02-21T09:33:54.774+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 43
+[2025-02-21T09:33:54.778+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 44
+[2025-02-21T09:33:54.782+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 45
+[2025-02-21T09:33:54.786+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 46
+[2025-02-21T09:33:54.789+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 47
+[2025-02-21T09:33:54.792+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 48
+[2025-02-21T09:33:54.795+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 49
+[2025-02-21T09:33:54.797+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 50
+[2025-02-21T09:33:54.800+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 51
+[2025-02-21T09:33:54.803+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 52
+[2025-02-21T09:33:54.806+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 53
+[2025-02-21T09:33:54.810+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 54
+[2025-02-21T09:33:54.813+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 55
+[2025-02-21T09:33:54.816+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 56
+[2025-02-21T09:33:54.819+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 57
+[2025-02-21T09:33:54.821+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 58
+[2025-02-21T09:33:54.825+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 59
+[2025-02-21T09:33:54.827+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 60
+[2025-02-21T09:33:54.830+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 61
+[2025-02-21T09:33:54.833+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 62
+[2025-02-21T09:33:54.837+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 63
+[2025-02-21T09:33:54.840+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 64
+[2025-02-21T09:33:54.844+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 65
+[2025-02-21T09:33:54.847+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 66
+[2025-02-21T09:33:54.850+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 67
+[2025-02-21T09:33:54.854+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 68
+[2025-02-21T09:33:54.856+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 69
+[2025-02-21T09:33:54.859+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 70
+[2025-02-21T09:33:54.861+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 71
+[2025-02-21T09:33:54.863+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 72
+[2025-02-21T09:33:54.866+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 73
+[2025-02-21T09:33:54.870+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 74
+[2025-02-21T09:33:54.872+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 75
+[2025-02-21T09:33:54.875+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 76
+[2025-02-21T09:33:54.877+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 77
+[2025-02-21T09:33:54.879+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 78
+[2025-02-21T09:33:54.881+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 79
+[2025-02-21T09:33:54.884+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 80
+[2025-02-21T09:33:54.887+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 81
+[2025-02-21T09:33:54.889+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 82
+[2025-02-21T09:33:54.891+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 83
+[2025-02-21T09:33:54.894+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 84
+[2025-02-21T09:33:54.897+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 85
+[2025-02-21T09:33:54.900+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 86
+[2025-02-21T09:33:54.903+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 87
+[2025-02-21T09:33:54.906+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 88
+[2025-02-21T09:33:54.909+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 89
+[2025-02-21T09:33:54.912+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 90
+[2025-02-21T09:33:54.915+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 91
+[2025-02-21T09:33:54.917+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 92
+[2025-02-21T09:33:54.919+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 93
+[2025-02-21T09:33:54.922+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 94
+[2025-02-21T09:33:54.925+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 95
+[2025-02-21T09:33:54.929+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 96
+[2025-02-21T09:33:54.932+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 97
+[2025-02-21T09:33:54.935+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 98
+[2025-02-21T09:33:54.938+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 99
+[2025-02-21T09:33:54.941+0000] {sync_postgres_dag.py:208} INFO - Successfully processed amount for ID: 100
+[2025-02-21T09:36:00.890+0000] {local_task_job_runner.py:294} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2025-02-21T09:36:00.892+0000] {process_utils.py:131} INFO - Sending 15 to group 1586. PIDs of all processes in the group: [1586]
+[2025-02-21T09:36:00.893+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 1586
+[2025-02-21T09:36:00.969+0000] {taskinstance.py:1632} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-02-21T09:36:00.969+0000] {sync_postgres_dag.py:215} ERROR - Fatal error in amount consumer: Task received SIGTERM signal
+[2025-02-21T09:36:00.970+0000] {sync_postgres_dag.py:219} INFO - Closing connections for amount consumer...
+[2025-02-21T09:36:01.026+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=1586, status='terminated', exitcode=0, started='09:33:53') (1586) terminated with exit code 0

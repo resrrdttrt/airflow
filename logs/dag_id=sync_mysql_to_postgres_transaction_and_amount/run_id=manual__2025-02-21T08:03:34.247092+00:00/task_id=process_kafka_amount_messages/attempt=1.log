@@ -1,0 +1,23 @@
+[2025-02-21T08:03:35.417+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sync_mysql_to_postgres_transaction_and_amount.process_kafka_amount_messages manual__2025-02-21T08:03:34.247092+00:00 [queued]>
+[2025-02-21T08:03:35.430+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sync_mysql_to_postgres_transaction_and_amount.process_kafka_amount_messages manual__2025-02-21T08:03:34.247092+00:00 [queued]>
+[2025-02-21T08:03:35.430+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-02-21T08:03:35.448+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): process_kafka_amount_messages> on 2025-02-21 08:03:34.247092+00:00
+[2025-02-21T08:03:35.458+0000] {standard_task_runner.py:57} INFO - Started process 109 to run task
+[2025-02-21T08:03:35.464+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'sync_mysql_to_postgres_transaction_and_amount', 'process_kafka_amount_messages', 'manual__2025-02-21T08:03:34.247092+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/sync_mysql_dag.py', '--cfg-path', '/tmp/tmp753erjnm']
+[2025-02-21T08:03:35.467+0000] {standard_task_runner.py:85} INFO - Job 20: Subtask process_kafka_amount_messages
+[2025-02-21T08:03:35.537+0000] {task_command.py:416} INFO - Running <TaskInstance: sync_mysql_to_postgres_transaction_and_amount.process_kafka_amount_messages manual__2025-02-21T08:03:34.247092+00:00 [running]> on host c0c1f1afe7d6
+[2025-02-21T08:03:35.646+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='sync_mysql_to_postgres_transaction_and_amount' AIRFLOW_CTX_TASK_ID='process_kafka_amount_messages' AIRFLOW_CTX_EXECUTION_DATE='2025-02-21T08:03:34.247092+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-21T08:03:34.247092+00:00'
+[2025-02-21T08:03:35.647+0000] {sync_mysql_dag.py:123} INFO - Starting Kafka consumer for amount messages...
+[2025-02-21T08:03:35.647+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/sync_mysql_dag.py", line 133, in process_kafka_amount_messages
+    consumer = Consumer(consumer_config)
+cimpl.KafkaException: KafkaError{code=_INVALID_ARG,val=-186,str="No such configuration property: "value.deserializer""}
+[2025-02-21T08:03:35.660+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=sync_mysql_to_postgres_transaction_and_amount, task_id=process_kafka_amount_messages, execution_date=20250221T080334, start_date=20250221T080335, end_date=20250221T080335
+[2025-02-21T08:03:35.677+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 20 for task process_kafka_amount_messages (KafkaError{code=_INVALID_ARG,val=-186,str="No such configuration property: "value.deserializer""}; 109)
+[2025-02-21T08:03:35.715+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-02-21T08:03:35.740+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
