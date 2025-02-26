@@ -1,0 +1,5 @@
+docker build -t list-files-app .
+
+docker run -e FILE_NAME=test.txt -v /home/vandung545917/airflow/test/testFolder:/app/testFolder list-files-app
+
+docker run -e FILE_NAME=test3.txt -v /home/vandung545917/airflow/test/testFolder:/app/testFolder list-files-app

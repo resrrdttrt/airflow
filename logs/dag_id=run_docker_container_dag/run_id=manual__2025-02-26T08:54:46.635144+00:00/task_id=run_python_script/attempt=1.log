@@ -1,0 +1,42 @@
+[2025-02-26T08:54:48.789+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: run_docker_container_dag.run_python_script manual__2025-02-26T08:54:46.635144+00:00 [queued]>
+[2025-02-26T08:54:48.805+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: run_docker_container_dag.run_python_script manual__2025-02-26T08:54:46.635144+00:00 [queued]>
+[2025-02-26T08:54:48.806+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2025-02-26T08:54:48.827+0000] {taskinstance.py:1382} INFO - Executing <Task(DockerOperator): run_python_script> on 2025-02-26 08:54:46.635144+00:00
+[2025-02-26T08:54:48.836+0000] {standard_task_runner.py:57} INFO - Started process 466 to run task
+[2025-02-26T08:54:48.840+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'run_docker_container_dag', 'run_python_script', 'manual__2025-02-26T08:54:46.635144+00:00', '--job-id', '55', '--raw', '--subdir', 'DAGS_FOLDER/test_docker.py', '--cfg-path', '/tmp/tmp076_8twy']
+[2025-02-26T08:54:48.842+0000] {standard_task_runner.py:85} INFO - Job 55: Subtask run_python_script
+[2025-02-26T08:54:48.921+0000] {task_command.py:416} INFO - Running <TaskInstance: run_docker_container_dag.run_python_script manual__2025-02-26T08:54:46.635144+00:00 [running]> on host 09c7d6597690
+[2025-02-26T08:54:49.062+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='run_docker_container_dag' AIRFLOW_CTX_TASK_ID='run_python_script' AIRFLOW_CTX_EXECUTION_DATE='2025-02-26T08:54:46.635144+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-26T08:54:46.635144+00:00'
+[2025-02-26T08:54:49.110+0000] {docker.py:343} INFO - Starting docker container from image list-files-app
+[2025-02-26T08:54:49.116+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 268, in _raise_for_status
+    response.raise_for_status()
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: http+docker://localhost/v1.45/containers/create?name=list_files_container
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 486, in execute
+    return self._run_image()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 348, in _run_image
+    return self._run_image_with_mounts([*self.mounts, tmp_mount], add_tmp_variable=True)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 375, in _run_image_with_mounts
+    self.container = self.cli.create_container(
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/container.py", line 431, in create_container
+    return self.create_container_from_config(config, name, platform)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/container.py", line 448, in create_container_from_config
+    return self._result(res, True)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 274, in _result
+    self._raise_for_status(response)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 270, in _raise_for_status
+    raise create_api_error_from_http_exception(e) from e
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/errors.py", line 39, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation) from e
+docker.errors.APIError: 400 Client Error for http+docker://localhost/v1.45/containers/create?name=list_files_container: Bad Request ("invalid mount config for type "bind": bind source path does not exist: /opt/airflow/test/testFolder")
+[2025-02-26T08:54:49.133+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=run_docker_container_dag, task_id=run_python_script, execution_date=20250226T085446, start_date=20250226T085448, end_date=20250226T085449
+[2025-02-26T08:54:49.158+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 55 for task run_python_script (400 Client Error for http+docker://localhost/v1.45/containers/create?name=list_files_container: Bad Request ("invalid mount config for type "bind": bind source path does not exist: /opt/airflow/test/testFolder"); 466)
+[2025-02-26T08:54:49.174+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-02-26T08:54:49.200+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
