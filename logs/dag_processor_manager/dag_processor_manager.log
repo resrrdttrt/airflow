@@ -14739,3 +14739,29 @@ File Path                               PID    Runtime      # DAGs    # Errors  
 /opt/airflow/dags/test_docker.py                                 1           0  0.17s           2025-02-26T10:15:41
 /opt/airflow/dags/sync_postgres_dag.py                           1           0  0.15s           2025-02-26T10:15:25
 ================================================================================
+[2025-02-26T10:16:18.784+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ml_pipeline.py                                 0           1  0.43s           2025-02-26T10:16:02
+/opt/airflow/dags/sync_mysql_dag.py                              1           0  0.15s           2025-02-26T10:15:56
+/opt/airflow/dags/consume.py                                     1           0  0.17s           2025-02-26T10:15:59
+/opt/airflow/dags/test_docker.py                                 1           0  0.16s           2025-02-26T10:16:11
+/opt/airflow/dags/sync_postgres_dag.py                           1           0  0.13s           2025-02-26T10:15:56
+================================================================================
+[2025-02-26T10:16:47.410+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2025-02-26T10:16:47.413+0000] {manager.py:758} INFO - There are 5 files in /opt/airflow/dags
+[2025-02-26T10:16:49.285+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ml_pipeline.py                                 0           1  0.41s           2025-02-26T10:16:33
+/opt/airflow/dags/sync_mysql_dag.py                              1           0  0.14s           2025-02-26T10:16:26
+/opt/airflow/dags/consume.py                                     1           0  0.14s           2025-02-26T10:16:30
+/opt/airflow/dags/test_docker.py                                 1           0  0.15s           2025-02-26T10:16:42
+/opt/airflow/dags/sync_postgres_dag.py                           1           0  0.14s           2025-02-26T10:16:26
+================================================================================

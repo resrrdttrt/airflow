@@ -2798,3 +2798,24 @@
 [2025-02-26T10:15:28.994+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:15:28.993+0000] {dag.py:2941} INFO - Sync 1 DAGs
 [2025-02-26T10:15:29.046+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:15:29.045+0000] {dag.py:3722} INFO - Setting next_dagrun for kafka_consumer_dag to None, run_after=None
 [2025-02-26T10:15:29.093+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/consume.py took 0.182 seconds
+[2025-02-26T10:15:59.492+0000] {processor.py:157} INFO - Started process (PID=2683) to work on /opt/airflow/dags/consume.py
+[2025-02-26T10:15:59.493+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/consume.py for tasks to queue
+[2025-02-26T10:15:59.495+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:15:59.494+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/consume.py
+[2025-02-26T10:15:59.515+0000] {processor.py:839} INFO - DAG(s) dict_keys(['kafka_consumer_dag']) retrieved from /opt/airflow/dags/consume.py
+[2025-02-26T10:15:59.559+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:15:59.558+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-02-26T10:15:59.595+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:15:59.595+0000] {dag.py:3722} INFO - Setting next_dagrun for kafka_consumer_dag to None, run_after=None
+[2025-02-26T10:15:59.630+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/consume.py took 0.143 seconds
+[2025-02-26T10:16:30.025+0000] {processor.py:157} INFO - Started process (PID=2696) to work on /opt/airflow/dags/consume.py
+[2025-02-26T10:16:30.027+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/consume.py for tasks to queue
+[2025-02-26T10:16:30.029+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:16:30.028+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/consume.py
+[2025-02-26T10:16:30.048+0000] {processor.py:839} INFO - DAG(s) dict_keys(['kafka_consumer_dag']) retrieved from /opt/airflow/dags/consume.py
+[2025-02-26T10:16:30.081+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:16:30.081+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-02-26T10:16:30.110+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:16:30.109+0000] {dag.py:3722} INFO - Setting next_dagrun for kafka_consumer_dag to None, run_after=None
+[2025-02-26T10:16:30.136+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/consume.py took 0.115 seconds
+[2025-02-26T10:17:00.514+0000] {processor.py:157} INFO - Started process (PID=2709) to work on /opt/airflow/dags/consume.py
+[2025-02-26T10:17:00.516+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/consume.py for tasks to queue
+[2025-02-26T10:17:00.517+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:17:00.516+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/consume.py
+[2025-02-26T10:17:00.536+0000] {processor.py:839} INFO - DAG(s) dict_keys(['kafka_consumer_dag']) retrieved from /opt/airflow/dags/consume.py
+[2025-02-26T10:17:00.576+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:17:00.575+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-02-26T10:17:00.606+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:17:00.606+0000] {dag.py:3722} INFO - Setting next_dagrun for kafka_consumer_dag to None, run_after=None
+[2025-02-26T10:17:00.643+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/consume.py took 0.133 seconds
