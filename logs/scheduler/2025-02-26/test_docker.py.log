@@ -2410,3 +2410,38 @@ airflow.exceptions.AirflowException: Invalid arguments were passed to DockerOper
 [2025-02-26T10:16:42.301+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:16:42.301+0000] {dag.py:2941} INFO - Sync 1 DAGs
 [2025-02-26T10:16:42.330+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:16:42.330+0000] {dag.py:3722} INFO - Setting next_dagrun for test_docker to 2025-02-25T00:00:00+00:00, run_after=2025-02-25T00:00:00+00:00
 [2025-02-26T10:16:42.363+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/test_docker.py took 0.124 seconds
+[2025-02-26T10:17:12.760+0000] {processor.py:157} INFO - Started process (PID=2718) to work on /opt/airflow/dags/test_docker.py
+[2025-02-26T10:17:12.762+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/test_docker.py for tasks to queue
+[2025-02-26T10:17:12.764+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:17:12.763+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/test_docker.py
+[2025-02-26T10:17:12.781+0000] {processor.py:839} INFO - DAG(s) dict_keys(['test_docker']) retrieved from /opt/airflow/dags/test_docker.py
+[2025-02-26T10:17:12.819+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:17:12.819+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-02-26T10:17:12.853+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:17:12.852+0000] {dag.py:3722} INFO - Setting next_dagrun for test_docker to 2025-02-25T00:00:00+00:00, run_after=2025-02-25T00:00:00+00:00
+[2025-02-26T10:17:12.889+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/test_docker.py took 0.133 seconds
+[2025-02-26T10:17:43.320+0000] {processor.py:157} INFO - Started process (PID=2731) to work on /opt/airflow/dags/test_docker.py
+[2025-02-26T10:17:43.321+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/test_docker.py for tasks to queue
+[2025-02-26T10:17:43.322+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:17:43.322+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/test_docker.py
+[2025-02-26T10:17:43.337+0000] {processor.py:839} INFO - DAG(s) dict_keys(['test_docker']) retrieved from /opt/airflow/dags/test_docker.py
+[2025-02-26T10:17:43.381+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:17:43.381+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-02-26T10:17:43.413+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:17:43.413+0000] {dag.py:3722} INFO - Setting next_dagrun for test_docker to 2025-02-25T00:00:00+00:00, run_after=2025-02-25T00:00:00+00:00
+[2025-02-26T10:17:43.449+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/test_docker.py took 0.134 seconds
+[2025-02-26T10:18:13.866+0000] {processor.py:157} INFO - Started process (PID=2744) to work on /opt/airflow/dags/test_docker.py
+[2025-02-26T10:18:13.868+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/test_docker.py for tasks to queue
+[2025-02-26T10:18:13.869+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:18:13.868+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/test_docker.py
+[2025-02-26T10:18:13.883+0000] {processor.py:839} INFO - DAG(s) dict_keys(['test_docker']) retrieved from /opt/airflow/dags/test_docker.py
+[2025-02-26T10:18:13.922+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:18:13.922+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-02-26T10:18:13.952+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:18:13.952+0000] {dag.py:3722} INFO - Setting next_dagrun for test_docker to 2025-02-25T00:00:00+00:00, run_after=2025-02-25T00:00:00+00:00
+[2025-02-26T10:18:13.988+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/test_docker.py took 0.126 seconds
+[2025-02-26T10:18:44.415+0000] {processor.py:157} INFO - Started process (PID=2757) to work on /opt/airflow/dags/test_docker.py
+[2025-02-26T10:18:44.418+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/test_docker.py for tasks to queue
+[2025-02-26T10:18:44.419+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:18:44.418+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/test_docker.py
+[2025-02-26T10:18:44.434+0000] {processor.py:839} INFO - DAG(s) dict_keys(['test_docker']) retrieved from /opt/airflow/dags/test_docker.py
+[2025-02-26T10:18:44.472+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:18:44.472+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-02-26T10:18:44.505+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:18:44.504+0000] {dag.py:3722} INFO - Setting next_dagrun for test_docker to 2025-02-25T00:00:00+00:00, run_after=2025-02-25T00:00:00+00:00
+[2025-02-26T10:18:44.535+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/test_docker.py took 0.125 seconds
+[2025-02-26T10:19:14.930+0000] {processor.py:157} INFO - Started process (PID=2770) to work on /opt/airflow/dags/test_docker.py
+[2025-02-26T10:19:14.931+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/test_docker.py for tasks to queue
+[2025-02-26T10:19:14.932+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:19:14.932+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/test_docker.py
+[2025-02-26T10:19:14.945+0000] {processor.py:839} INFO - DAG(s) dict_keys(['test_docker']) retrieved from /opt/airflow/dags/test_docker.py
+[2025-02-26T10:19:14.984+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:19:14.984+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-02-26T10:19:15.025+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:19:15.024+0000] {dag.py:3722} INFO - Setting next_dagrun for test_docker to 2025-02-25T00:00:00+00:00, run_after=2025-02-25T00:00:00+00:00
+[2025-02-26T10:19:15.056+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/test_docker.py took 0.131 seconds

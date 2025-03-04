@@ -2819,3 +2819,31 @@
 [2025-02-26T10:16:57.414+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:16:57.414+0000] {dag.py:2941} INFO - Sync 1 DAGs
 [2025-02-26T10:16:57.430+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:16:57.430+0000] {dag.py:3722} INFO - Setting next_dagrun for sync_postgres_to_postgres_transaction_and_amount to None, run_after=None
 [2025-02-26T10:16:57.455+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/sync_postgres_dag.py took 0.103 seconds
+[2025-02-26T10:17:27.875+0000] {processor.py:157} INFO - Started process (PID=2719) to work on /opt/airflow/dags/sync_postgres_dag.py
+[2025-02-26T10:17:27.876+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/sync_postgres_dag.py for tasks to queue
+[2025-02-26T10:17:27.877+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:17:27.877+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/sync_postgres_dag.py
+[2025-02-26T10:17:27.900+0000] {processor.py:839} INFO - DAG(s) dict_keys(['sync_postgres_to_postgres_transaction_and_amount']) retrieved from /opt/airflow/dags/sync_postgres_dag.py
+[2025-02-26T10:17:27.946+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:17:27.945+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-02-26T10:17:27.965+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:17:27.965+0000] {dag.py:3722} INFO - Setting next_dagrun for sync_postgres_to_postgres_transaction_and_amount to None, run_after=None
+[2025-02-26T10:17:28.012+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/sync_postgres_dag.py took 0.142 seconds
+[2025-02-26T10:17:58.432+0000] {processor.py:157} INFO - Started process (PID=2732) to work on /opt/airflow/dags/sync_postgres_dag.py
+[2025-02-26T10:17:58.434+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/sync_postgres_dag.py for tasks to queue
+[2025-02-26T10:17:58.436+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:17:58.435+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/sync_postgres_dag.py
+[2025-02-26T10:17:58.462+0000] {processor.py:839} INFO - DAG(s) dict_keys(['sync_postgres_to_postgres_transaction_and_amount']) retrieved from /opt/airflow/dags/sync_postgres_dag.py
+[2025-02-26T10:17:58.504+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:17:58.504+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-02-26T10:17:58.520+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:17:58.519+0000] {dag.py:3722} INFO - Setting next_dagrun for sync_postgres_to_postgres_transaction_and_amount to None, run_after=None
+[2025-02-26T10:17:58.554+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/sync_postgres_dag.py took 0.126 seconds
+[2025-02-26T10:18:28.977+0000] {processor.py:157} INFO - Started process (PID=2745) to work on /opt/airflow/dags/sync_postgres_dag.py
+[2025-02-26T10:18:28.978+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/sync_postgres_dag.py for tasks to queue
+[2025-02-26T10:18:28.979+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:18:28.978+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/sync_postgres_dag.py
+[2025-02-26T10:18:29.001+0000] {processor.py:839} INFO - DAG(s) dict_keys(['sync_postgres_to_postgres_transaction_and_amount']) retrieved from /opt/airflow/dags/sync_postgres_dag.py
+[2025-02-26T10:18:29.052+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:18:29.052+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-02-26T10:18:29.073+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:18:29.073+0000] {dag.py:3722} INFO - Setting next_dagrun for sync_postgres_to_postgres_transaction_and_amount to None, run_after=None
+[2025-02-26T10:18:29.114+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/sync_postgres_dag.py took 0.141 seconds
+[2025-02-26T10:18:59.525+0000] {processor.py:157} INFO - Started process (PID=2758) to work on /opt/airflow/dags/sync_postgres_dag.py
+[2025-02-26T10:18:59.528+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/sync_postgres_dag.py for tasks to queue
+[2025-02-26T10:18:59.529+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:18:59.528+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/sync_postgres_dag.py
+[2025-02-26T10:18:59.549+0000] {processor.py:839} INFO - DAG(s) dict_keys(['sync_postgres_to_postgres_transaction_and_amount']) retrieved from /opt/airflow/dags/sync_postgres_dag.py
+[2025-02-26T10:18:59.586+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:18:59.585+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-02-26T10:18:59.602+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:18:59.602+0000] {dag.py:3722} INFO - Setting next_dagrun for sync_postgres_to_postgres_transaction_and_amount to None, run_after=None
+[2025-02-26T10:18:59.637+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/sync_postgres_dag.py took 0.116 seconds

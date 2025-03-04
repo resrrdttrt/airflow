@@ -2255,3 +2255,73 @@ Traceback (most recent call last):
 ModuleNotFoundError: No module named 'sklearn'
 [2025-02-26T10:16:33.411+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/ml_pipeline.py
 [2025-02-26T10:16:33.440+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/ml_pipeline.py took 0.383 seconds
+[2025-02-26T10:17:03.559+0000] {processor.py:157} INFO - Started process (PID=2710) to work on /opt/airflow/dags/ml_pipeline.py
+[2025-02-26T10:17:03.560+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/ml_pipeline.py for tasks to queue
+[2025-02-26T10:17:03.561+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:17:03.560+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline.py
+[2025-02-26T10:17:03.934+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:17:03.930+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/ml_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ml_pipeline.py", line 9, in <module>
+    from sklearn.preprocessing import LabelEncoder
+ModuleNotFoundError: No module named 'sklearn'
+[2025-02-26T10:17:03.934+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/ml_pipeline.py
+[2025-02-26T10:17:03.967+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/ml_pipeline.py took 0.413 seconds
+[2025-02-26T10:17:34.110+0000] {processor.py:157} INFO - Started process (PID=2722) to work on /opt/airflow/dags/ml_pipeline.py
+[2025-02-26T10:17:34.112+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/ml_pipeline.py for tasks to queue
+[2025-02-26T10:17:34.113+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:17:34.113+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline.py
+[2025-02-26T10:17:34.451+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:17:34.448+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/ml_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ml_pipeline.py", line 9, in <module>
+    from sklearn.preprocessing import LabelEncoder
+ModuleNotFoundError: No module named 'sklearn'
+[2025-02-26T10:17:34.451+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/ml_pipeline.py
+[2025-02-26T10:17:34.480+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/ml_pipeline.py took 0.375 seconds
+[2025-02-26T10:18:04.655+0000] {processor.py:157} INFO - Started process (PID=2735) to work on /opt/airflow/dags/ml_pipeline.py
+[2025-02-26T10:18:04.657+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/ml_pipeline.py for tasks to queue
+[2025-02-26T10:18:04.659+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:18:04.658+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline.py
+[2025-02-26T10:18:05.018+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:18:05.014+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/ml_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ml_pipeline.py", line 9, in <module>
+    from sklearn.preprocessing import LabelEncoder
+ModuleNotFoundError: No module named 'sklearn'
+[2025-02-26T10:18:05.019+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/ml_pipeline.py
+[2025-02-26T10:18:05.051+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/ml_pipeline.py took 0.400 seconds
+[2025-02-26T10:18:35.211+0000] {processor.py:157} INFO - Started process (PID=2748) to work on /opt/airflow/dags/ml_pipeline.py
+[2025-02-26T10:18:35.213+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/ml_pipeline.py for tasks to queue
+[2025-02-26T10:18:35.214+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:18:35.214+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline.py
+[2025-02-26T10:18:35.550+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:18:35.547+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/ml_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ml_pipeline.py", line 9, in <module>
+    from sklearn.preprocessing import LabelEncoder
+ModuleNotFoundError: No module named 'sklearn'
+[2025-02-26T10:18:35.550+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/ml_pipeline.py
+[2025-02-26T10:18:35.579+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/ml_pipeline.py took 0.371 seconds
+[2025-02-26T10:19:05.726+0000] {processor.py:157} INFO - Started process (PID=2761) to work on /opt/airflow/dags/ml_pipeline.py
+[2025-02-26T10:19:05.727+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/ml_pipeline.py for tasks to queue
+[2025-02-26T10:19:05.728+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:19:05.728+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline.py
+[2025-02-26T10:19:06.083+0000] {logging_mixin.py:154} INFO - [2025-02-26T10:19:06.079+0000] {dagbag.py:346} ERROR - Failed to import: /opt/airflow/dags/ml_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 342, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ml_pipeline.py", line 9, in <module>
+    from sklearn.preprocessing import LabelEncoder
+ModuleNotFoundError: No module named 'sklearn'
+[2025-02-26T10:19:06.083+0000] {processor.py:841} WARNING - No viable dags retrieved from /opt/airflow/dags/ml_pipeline.py
+[2025-02-26T10:19:06.110+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/ml_pipeline.py took 0.389 seconds

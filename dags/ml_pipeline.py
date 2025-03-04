@@ -139,7 +139,7 @@ with DAG(
                 'type': 'bind',
             },
         ],
-        ports=['8000:8000'],
+        port_bindings={'8000': '8000'},
         environment={
             'MODEL_NAME': '{{ task_instance.xcom_pull(task_ids="train_models", key="model_name") }}'
         },
