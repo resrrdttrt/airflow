@@ -59,7 +59,7 @@ consume_task = PythonOperator(
     op_kwargs={
         'broker_url': '172.17.0.1:9092',
         'topic_name': 'from_mysql_transaction',
-        'group_id': 'test-consumer-group-2343',
+        'group_id': 'test-consumer-group-1',
     },
     dag=dag,
 )

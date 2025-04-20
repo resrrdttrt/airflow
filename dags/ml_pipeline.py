@@ -128,20 +128,20 @@ with DAG(
     # Task 4: Deploy Model
     deploy_model = DockerOperator(
         task_id='deploy_model_hosting_server',
-        image='backend',
+        image='backend:latest',
         container_name='backend',
         api_version='auto',
         auto_remove=True,
-        mounts=[
-            {
-                'source': '/home/vandung545917/airflow/models',
-                'target': '/app/models',
-                'type': 'bind',
-            },
-        ],
+        # mounts=[
+        #     {
+        #         'source': '/home/dungngo0935431740/airflow/models',
+        #         'target': '/app/models',
+        #         'type': 'bind',
+        #     },
+        # ],
         port_bindings={'8000': '8000'},
         environment={
-            'MODEL_NAME': '{{ task_instance.xcom_pull(task_ids="train_models", key="model_name") }}'
+            'MODEL_PATH': '{{ task_instance.xcom_pull(task_ids="train_models", key="model_name") }}'
         },
         command='python3 app.py',
     )

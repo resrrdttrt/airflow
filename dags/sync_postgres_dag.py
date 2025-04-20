@@ -91,13 +91,23 @@ def process_kafka_transaction_messages():
                         }
                         # logger.info(f"Inserting transaction data: {json.dumps(insert_data, indent=2)}")
                         
+                        # insert_query = """
+                        # INSERT INTO transaction (id, item_id, amount, buy_time, customer, store_id)
+                        # VALUES (%s, %s, %s, %s, %s, %s)
+                        # ON CONFLICT (id) DO UPDATE SET
+                        #     item_id = EXCLUDED.item_id,
+                        #     amount = EXCLUDED.amount,
+                        #     buy_time = EXCLUDED.buy_time,
+                        #     customer = EXCLUDED.customer,
+                        #     store_id = EXCLUDED.store_id;
+                        # """
+
                         insert_query = """
-                        INSERT INTO transaction (id, item_id, amount, buy_time, customer, store_id)
-                        VALUES (%s, %s, %s, %s, %s, %s)
+                        INSERT INTO transaction (id, item_id, amount, customer, store_id)
+                        VALUES (%s, %s, %s, %s, %s)
                         ON CONFLICT (id) DO UPDATE SET
                             item_id = EXCLUDED.item_id,
                             amount = EXCLUDED.amount,
-                            buy_time = EXCLUDED.buy_time,
                             customer = EXCLUDED.customer,
                             store_id = EXCLUDED.store_id;
                         """
@@ -106,7 +116,7 @@ def process_kafka_transaction_messages():
                             data['id'],
                             data['item_id'],
                             data['amount'],
-                            buy_time,
+                            # buy_time,
                             data['customer'],
                             STORE_ID
                         ))
