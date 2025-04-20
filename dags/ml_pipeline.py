@@ -1,6 +1,7 @@
 from airflow import DAG
 from airflow.providers.docker.operators.docker import DockerOperator
 from airflow.operators.python_operator import PythonOperator
+from airflow.operators.email_operator import EmailOperator
 from airflow.utils.dates import days_ago
 import numpy as np
 import pandas as pd
@@ -13,6 +14,11 @@ import pickle
 from sklearn.ensemble import RandomForestRegressor
 from xgboost import XGBRegressor
 from sklearn.tree import DecisionTreeRegressor
+import matplotlib.pyplot as plt
+from reportlab.lib.pagesizes import letter
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib.units import inch
 
 BASE_LOCATION = '/opt'
 
@@ -63,25 +69,29 @@ def train_models(**context):
 
     # Train and evaluate models
     models = {
-        'random_forest': RandomForestRegressor(),
-        'xgboost': XGBRegressor(),
-        'decision_tree': DecisionTreeRegressor()
+        'Random Forest': RandomForestRegressor(),
+        'XGBoost': XGBRegressor(),
+        'Decision Tree': DecisionTreeRegressor()
     }
 
+    scores = {}
     best_score = -float('inf')
     best_model = None
     best_model_name = None
+    best_y_pred = None
 
     for name, model in models.items():
         model.fit(X_train, Y_train)
         y_pred = model.predict(X_test)
         score = metrics.r2_score(Y_test, y_pred)
+        scores[name] = score
         print(f"{name} R-squared Score: {score}")
         
         if score > best_score:
             best_score = score
             best_model = model
             best_model_name = name
+            best_y_pred = y_pred
 
     # Save the best model
     os.makedirs(f'{BASE_LOCATION}/airflow/models', exist_ok=True)
@@ -90,7 +100,114 @@ def train_models(**context):
     model_path = f'{BASE_LOCATION}/airflow/models/{model_name}'
     pickle.dump(best_model, open(model_path, 'wb'))
     print(f"Saved best model: {best_model_name} with R-squared score: {best_score}")
+
+    # Generate charts
+    os.makedirs(f'{BASE_LOCATION}/airflow/plots', exist_ok=True)
+
+    # Chart 1: Model Performance Comparison (Bar Chart)
+    plt.figure(figsize=(8, 6))
+    plt.bar(scores.keys(), scores.values(), color=['#1f77b4', '#ff7f0e', '#2ca02c'])
+    plt.title('Model Performance Comparison', fontsize=14, pad=15)
+    plt.xlabel('Model', fontsize=12)
+    plt.ylabel('R-squared Score', fontsize=12)
+    plt.ylim(0, 1)
+    plt.grid(axis='y', linestyle='--', alpha=0.7)
+    plt.savefig(f'{BASE_LOCATION}/airflow/plots/model_comparison.png', bbox_inches='tight')
+    plt.close()
+
+    # Chart 2: Feature Importance (for Random Forest or XGBoost)
+    if best_model_name in ['Random Forest', 'XGBoost']:
+        plt.figure(figsize=(10, 6))
+        feature_importance = best_model.feature_importances_
+        feature_names = X.columns
+        sorted_idx = np.argsort(feature_importance)[-10:]  # Top 10 features
+        plt.barh(feature_names[sorted_idx], feature_importance[sorted_idx], color='#9467bd')
+        plt.title(f'Feature Importance - {best_model_name}', fontsize=14, pad=15)
+        plt.xlabel('Importance', fontsize=12)
+        plt.tight_layout()
+        plt.savefig(f'{BASE_LOCATION}/airflow/plots/feature_importance.png', bbox_inches='tight')
+        plt.close()
+    else:
+        # Placeholder for Decision Tree
+        with open(f'{BASE_LOCATION}/airflow/plots/feature_importance.png', 'wb') as f:
+            plt.figure(figsize=(8, 6))
+            plt.text(0.5, 0.5, 'Feature Importance Not Available for Decision Tree', 
+                     horizontalalignment='center', verticalalignment='center', fontsize=12)
+            plt.axis('off')
+            plt.savefig(f, format='png', bbox_inches='tight')
+            plt.close()
+
+    # Chart 3: Predicted vs Actual Values (Scatter Plot)
+    plt.figure(figsize=(8, 6))
+    plt.scatter(Y_test, best_y_pred, alpha=0.5, color='#d62728')
+    plt.plot([Y_test.min(), Y_test.max()], [Y_test.min(), Y_test.max()], 'k--', lw=2)
+    plt.title(f'Predicted vs Actual Values - {best_model_name}', fontsize=14, pad=15)
+    plt.xlabel('Actual Item_Store_Sales', fontsize=12)
+    plt.ylabel('Predicted Item_Store_Sales', fontsize=12)
+    plt.grid(True, linestyle='--', alpha=0.7)
+    plt.savefig(f'{BASE_LOCATION}/airflow/plots/predicted_vs_actual.png', bbox_inches='tight')
+    plt.close()
+
+    # Chart 4: Residual Plot
+    residuals = Y_test - best_y_pred
+    plt.figure(figsize=(8, 6))
+    plt.scatter(best_y_pred, residuals, alpha=0.5, color='#17becf')
+    plt.axhline(y=0, color='k', linestyle='--', lw=2)
+    plt.title(f'Residual Plot - {best_model_name}', fontsize=14, pad=15)
+    plt.xlabel('Predicted Item_Store_Sales', fontsize=12)
+    plt.ylabel('Residuals', fontsize=12)
+    plt.grid(True, linestyle='--', alpha=0.7)
+    plt.savefig(f'{BASE_LOCATION}/airflow/plots/residual_plot.png', bbox_inches='tight')
+    plt.close()
+
+    # Generate PDF report
+    pdf_path = f'{BASE_LOCATION}/airflow/plots/report_{timestamp}.pdf'
+    doc = SimpleDocTemplate(pdf_path, pagesize=letter)
+    styles = getSampleStyleSheet()
+    story = []
+
+    # Title
+    story.append(Paragraph("Machine Learning Pipeline Training Report", styles['Title']))
+    story.append(Spacer(1, 0.2 * inch))
+    story.append(Paragraph(f"Generated on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}", styles['Normal']))
+    story.append(Spacer(1, 0.2 * inch))
+
+    # Summary
+    story.append(Paragraph("Summary", styles['Heading2']))
+    story.append(Paragraph(f"<b>Best Model:</b> {best_model_name}", styles['Normal']))
+    story.append(Paragraph(f"<b>R-squared Score:</b> {best_score:.4f}", styles['Normal']))
+    story.append(Paragraph(f"<b>Model Saved At:</b> {model_path}", styles['Normal']))
+    story.append(Spacer(1, 0.3 * inch))
+
+    # Charts
+    chart_titles = [
+        "Model Performance Comparison",
+        "Feature Importance",
+        "Predicted vs Actual Values",
+        "Residual Plot"
+    ]
+    chart_paths = [
+        f'{BASE_LOCATION}/airflow/plots/model_comparison.png',
+        f'{BASE_LOCATION}/airflow/plots/feature_importance.png',
+        f'{BASE_LOCATION}/airflow/plots/predicted_vs_actual.png',
+        f'{BASE_LOCATION}/airflow/plots/residual_plot.png'
+    ]
+
+    for title, path in zip(chart_titles, chart_paths):
+        story.append(Paragraph(title, styles['Heading2']))
+        img = Image(path, width=6 * inch, height=4 * inch)
+        img.hAlign = 'CENTER'
+        story.append(img)
+        story.append(Spacer(1, 0.3 * inch))
+
+    doc.build(story)
+    print(f"Generated PDF report at: {pdf_path}")
+
+    # Push results to XCom
     context['ti'].xcom_push(key='model_name', value=model_name)
+    context['ti'].xcom_push(key='best_model_name', value=best_model_name)
+    context['ti'].xcom_push(key='best_score', value=best_score)
+    context['ti'].xcom_push(key='pdf_path', value=pdf_path)
 
 # Define default arguments for the DAG
 default_args = {
@@ -105,6 +222,7 @@ with DAG(
     default_args=default_args,
     schedule_interval='@once',
     catchup=False,
+    tags=['ml', 'pipeline'],
 ) as dag:
 
     # Task 1: Data Preparation
@@ -132,19 +250,43 @@ with DAG(
         container_name='backend',
         api_version='auto',
         auto_remove=True,
-        # mounts=[
-        #     {
-        #         'source': '/home/dungngo0935431740/airflow/models',
-        #         'target': '/app/models',
-        #         'type': 'bind',
-        #     },
-        # ],
         port_bindings={'8000': '8000'},
         environment={
             'MODEL_PATH': '{{ task_instance.xcom_pull(task_ids="train_models", key="model_name") }}'
         },
         command='python3 app.py',
     )
+    bestModel = '{{ task_instance.xcom_pull(task_ids="train_models", key="model_name") }}'
+    rSquaredScore = '{{ task_instance.xcom_pull(task_ids="train_models", key="best_score") }}'
+    savedModel = '{{ task_instance.xcom_pull(task_ids="train_models", key="model_name") }}'
+
+    # Task 5: Send Email Notification
+    send_notification = EmailOperator(
+        task_id='send_notification',
+        to='dungngo0935431740@gmail.com',
+        subject='Machine Learning Pipeline Training Report',
+        html_content=f"""
+        <h2>Machine Learning Pipeline Training Report</h2>
+        <p>Dear Team,</p>
+        <p>The machine learning pipeline has completed successfully. Below is the summary of the training results:</p>
+        <ul>
+            <li><strong>Best Model:</strong> {bestModel}</li>
+            <li><strong>R-squared Score:</strong> {rSquaredScore}</li>
+            <li><strong>Model Saved At:</strong> {BASE_LOCATION}/airflow/models/{savedModel}</li>
+        </ul>
+        <p>Please find the detailed training report attached as a PDF file, along with individual charts for your reference.</p>
+        <p>Best regards,<br>Data Science Team</p>
+        """,
+        files=[
+            '{{ task_instance.xcom_pull(task_ids="train_models", key="pdf_path") }}',
+            f'{BASE_LOCATION}/airflow/plots/model_comparison.png',
+            f'{BASE_LOCATION}/airflow/plots/feature_importance.png',
+            f'{BASE_LOCATION}/airflow/plots/predicted_vs_actual.png',
+            f'{BASE_LOCATION}/airflow/plots/residual_plot.png'
+        ],
+        conn_id='smtp_default',
+        mime_charset='utf-8',
+    )
 
     # Define the task sequence
-    prepare_data_task >> preprocess_data_task >> train_models_task >> deploy_model
+    prepare_data_task >> preprocess_data_task >> train_models_task >> send_notification >> deploy_model

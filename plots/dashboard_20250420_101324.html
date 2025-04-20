@@ -1,0 +1,40 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>ML Pipeline Training Report</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-gray-100 font-sans">
+        <div class="container mx-auto p-6 bg-white shadow-lg rounded-lg mt-6">
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">Machine Learning Pipeline Training Report</h1>
+            <p class="text-gray-600 mb-4">Generated on 2025-04-20 10:13:26</p>
+            <div class="mb-6">
+                <h2 class="text-2xl font-semibold text-gray-700">Summary</h2>
+                <p class="text-gray-600"><strong>Best Model:</strong> Random Forest</p>
+                <p class="text-gray-600"><strong>R-squared Score:</strong> 0.0770</p>
+                <p class="text-gray-600"><strong>Model Saved At:</strong> /opt/airflow/models/best_model_20250420_101324.pkl</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-50 p-4 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Model Performance Comparison</h3>
+                    <img src="cid:model_comparison.png" alt="Model Comparison" class="w-full rounded">
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Feature Importance</h3>
+                    <img src="cid:feature_importance.png" alt="Feature Importance" class="w-full rounded">
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Predicted vs Actual Values</h3>
+                    <img src="cid:predicted_vs_actual.png" alt="Predicted vs Actual" class="w-full rounded">
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Residual Plot</h3>
+                    <img src="cid:residual_plot.png" alt="Residual Plot" class="w-full rounded">
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>
+    
