@@ -19,6 +19,7 @@ from reportlab.lib.pagesizes import letter
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib.units import inch
+import uuid
 
 BASE_LOCATION = '/opt'
 
@@ -244,10 +245,12 @@ with DAG(
     )
 
     # Task 4: Deploy Model
+    random_suffix = uuid.uuid4().hex[:6]  # tạo chuỗi ngẫu nhiên 6 ký tự
+    container_name = f"backend_{random_suffix}"
     deploy_model = DockerOperator(
         task_id='deploy_model_hosting_server',
         image='backend:latest',
-        container_name='backend',
+        container_name=container_name,
         api_version='auto',
         auto_remove=True,
         port_bindings={'8000': '8000'},
